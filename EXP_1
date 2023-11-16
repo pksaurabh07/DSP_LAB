@@ -1,0 +1,162 @@
+EXP-1
+
+# Unit step signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+b=int(input('enter the maximum value for independent variable'))
+n=range(0,b+1,1)
+y=[]
+for i in range(len(n)):
+     if(n[i]>=0):
+      temp=1
+      y.append(temp)
+     else:
+      temp=0
+      y.append(temp)
+
+
+
+
+print(n)
+print(y)
+plt.title('Unit step signal')
+plt.ylabel('u(t)')
+plt.xlabel('t')
+plt.plot(n,y)
+plt.stem(n,y)
+
+
+
+
+# Ramp Signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+b=int(input('enter the maximum value for independent variable'))
+n=range(0,b+1,1)
+y=[]
+for i in range(len(n)):
+     if(n[i]>=0):
+      temp=n[i]
+      y.append(temp)
+     else:
+      temp=0
+      y.append(temp)
+
+
+
+
+print(n)
+print(y)
+plt.title('Ramp signal')
+plt.ylabel('r(t)')
+plt.xlabel('t')
+plt.plot(n,y)
+plt.stem(n,y)
+
+
+
+
+# Signum function signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+b=int(input('enter the maximum value for independent variable'))
+n=range(-b,b+1,1)
+y=[]
+for i in range(len(n)):
+     if(n[i]>0):
+      temp=1
+      y.append(temp)
+     elif(n[i]==0):
+      temp=0
+      y.append(temp)
+     else:
+      temp=-1
+      y.append(temp)
+
+print(n)
+print(y)
+plt.title('Signum function signal')
+plt.ylabel('sgn(t)')
+plt.xlabel('t')
+plt.plot(n,y)
+plt.stem(n,y)
+
+
+
+# Exponential function signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+b=int(input('enter the maximum value for independent variable : '))
+n=range(0,b+1,1)
+y=[]
+a=float(input('enter the value of base : '))
+for i in range(len(n)):
+     temp=a**n[i]
+     y.append(temp)
+
+
+print(n)
+print(y)
+plt.title('Exponential function signal')
+plt.ylabel('a^t')
+plt.xlabel('t')
+plt.plot(n,y)
+plt.stem(n,y)
+
+
+
+# Sine function signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+b=int(input('enter the maximum value for independent variable : '))
+n=range(-b,b+1,1)
+y=[]
+a=float(input('enter the value of omega(w) : '))
+c=float(input('enter the phase value : '))
+for i in range(len(n)):
+     temp=a**n[i] + c
+     x=np.sin(temp)
+     y.append(x)
+
+
+print(n)
+print(y)
+plt.title('Exponential function signal')
+plt.ylabel('a^t')
+plt.xlabel('t')
+plt.plot(n,y)
+plt.stem(n,y)
+
+# put b=20, w=0.5, phase=0
+
+# Alternate code:
+
+# Sine function signal
+
+import numpy as np
+import matplotlib.pyplot as plt
+n=int(input('Enter the value of t '))
+w=float(input('Enter the value of w '))
+x=np.arange(-n*w,n*w,0.0001)
+plt.xlabel('Independent Variable')
+plt.ylabel('Dependent Variable')
+plt.title('Sine function')
+plt.grid()
+y=np.sin(x)
+plt.plot(x,y)
+plt.stem(x,y,color='Black')
+plt.show
+
+
+
+
+
+
+
+
+
