@@ -1,0 +1,32 @@
+# Linear Convolution
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def linear_convolution(x,h,y,l,m):
+ k=l+m-1
+ y=[0]*k
+ for i in range(m):
+  for j in range(l):
+    y[i+j]+=x[j]*h[i]
+
+ return y
+
+l=int(input('Enter the length of x(n)'))
+x=list(map(int,input(' Enter the elements of x(n)').split()))
+m=int(input('Enter the length of h(n)'))
+h=list(map(int,input('Enter the elements of h(n)').split()))
+y=[]
+y=linear_convolution(x,h,y,l,m)
+print(y)
+
+plt.subplot(2,2,1)
+plt.title('x(n)')
+plt.stem(x)
+plt.subplot(2,2,2)
+plt.title('h(n)')
+plt.stem(h)
+plt.subplot(2,2,3)
+plt.title('y(n)')
+plt.stem(y)
+plt.show()
