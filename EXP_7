@@ -2,7 +2,7 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-def Auto_correlation(x,h):
+def cross_correlation(x,h):
  k=len(x)+len(h)-1
  resu=[0]*k
  for i in range(len(x)):
@@ -18,7 +18,7 @@ plt.subplot(2,2,2)
 plt.stem(h)
 h=h[::-1]
 result=[]
-result=Auto_correlation(x,h)
+result=cross_correlation(x,h)
 plt.subplot(2,2,3)
 print(result)
 plt.stem(result)
