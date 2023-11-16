@@ -1,0 +1,29 @@
+# Circular Convolution
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def circular_conv(x,h):
+  N=len(x)
+  resu=[0] * N
+  for n in range (N):
+    for k in range (N):
+      resu[n]+=x[k] * h[(n-k)%N]
+
+  return resu
+
+x=list(map(int,input('Enter the elements of the x(n) : ').split()))
+plt.subplot(2,2,1)
+plt.stem(x)
+h=list(map(int,input('Enter the elements of the h(n) : ').split()))
+plt.subplot(2,2,2)
+plt.stem(h)
+N=max(len(x),len(h))
+x+=[0] * (N-len(x))
+h+=[0] * (N-len(h))
+
+result=[]
+result=circular_conv(x,h)
+plt.subplot(2,2,3)
+print(result)
+plt.stem(result)
