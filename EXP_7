@@ -1,0 +1,30 @@
+# Cross Correlation
+
+import numpy as np
+import matplotlib.pyplot as plt
+def Auto_correlation(x,h):
+ k=len(x)+len(h)-1
+ resu=[0]*k
+ for i in range(len(x)):
+  for j in range(len(h)):
+    resu[i+j]+=x[i]*h[j]
+ return resu
+
+x=list(map(int,input('Enter the elements of the x(n) : ').split()))
+plt.subplot(2,2,1)
+plt.stem(x)
+h=list(map(int,input('Enter the elements of the h(n) : ').split()))
+plt.subplot(2,2,2)
+plt.stem(h)
+h=h[::-1]
+result=[]
+result=Auto_correlation(x,h)
+plt.subplot(2,2,3)
+print(result)
+plt.stem(result)
+
+
+
+
+
+
